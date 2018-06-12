@@ -21,7 +21,7 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.As
         private TextView txtNombre;
         private TextView txtCompañia;
 
-        private AsistenciaTO asistecia;
+        private AsistenciaTO asistencia;
 
 
         public AsistenciaViewHolder(View itemView) {
@@ -33,15 +33,15 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.As
                 @Override
                 public void onClick(View v){
                     Context context=v.getContext();
-                    Toast.makeText(context,asistecia.getCompanhia(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context,asistencia.getCompanhia(), Toast.LENGTH_SHORT).show();
                 }
             });
         }
 
-        public void setEvento(AsistenciaTO asistecia){
-            this.asistecia=asistecia;
-            this.txtNombre.setText(asistecia.getNombres());
-            this.txtCompañia.setText(asistecia.getCompanhia());
+        public void setAsistencia(AsistenciaTO asistencia){
+            this.asistencia=asistencia;
+            this.txtNombre.setText(asistencia.getNombres());
+            this.txtCompañia.setText(asistencia.getCompanhia());
         }
 
     }
@@ -56,7 +56,7 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.As
     }
 
     @Override
-    public AsistenciaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public AsistenciaAdapter.AsistenciaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context=parent.getContext();
         View view= LayoutInflater.from(context).inflate(R.layout.lista_asistencia, parent, false);
         AsistenciaViewHolder viewHolder=new AsistenciaViewHolder(view);
@@ -67,7 +67,7 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.As
     public void onBindViewHolder(AsistenciaViewHolder holder, int position) {
         AsistenciaTO asistenciax=asistencia.get(position);
 
-        holder.setEvento(asistenciax);
+        holder.setAsistencia(asistenciax);
     }
 
     @Override

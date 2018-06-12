@@ -58,9 +58,9 @@ public class AsistenciaFragment extends Fragment {
             @Override
             public void onResponse(Call<List<AsistenciaTO>> call, Response<List<AsistenciaTO>> response) {
 
-                asistencia = response.body();
+               /asistencia = response.body();
                 adapter=new AsistenciaAdapter(asistencia);
-                recyclerView.setLayoutManager(layoutManager);
+                recyclerView.setLayoutManager( );
                 recyclerView.setAdapter(adapter);
                 Log.e(TAG,"Llego.......!");
             }
