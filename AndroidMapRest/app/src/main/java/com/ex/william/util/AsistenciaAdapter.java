@@ -19,7 +19,7 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.As
 
     public static class AsistenciaViewHolder extends RecyclerView.ViewHolder {
         private TextView txtNombre;
-        private TextView txtLugar;
+        private TextView txtCompañia;
 
         private AsistenciaTO asistecia;
 
@@ -27,7 +27,7 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.As
         public AsistenciaViewHolder(View itemView) {
             super(itemView);
             this.txtNombre=(TextView) itemView.findViewById( R.id.txtNombre);
-            this.txtLugar=(TextView) itemView.findViewById(R.id.txtLugar);
+            this.txtCompañia=(TextView) itemView.findViewById(R.id.txtCompañia);
 
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override
@@ -40,8 +40,8 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.As
 
         public void setEvento(AsistenciaTO asistecia){
             this.asistecia=asistecia;
-            this.txtNombre.setText(asistecia.getOfline());
-            this.txtLugar.setText(asistecia.getCompanhia());
+            this.txtNombre.setText(asistecia.getNombres());
+            this.txtCompañia.setText(asistecia.getCompanhia());
         }
 
     }
@@ -51,14 +51,14 @@ public class AsistenciaAdapter extends RecyclerView.Adapter<AsistenciaAdapter.As
 
 
 
-    public AsistenciaAdapter(List<AsistenciaTO> asistencia){
-        this.asistencia=asistencia;
+    public AsistenciaAdapter(List<AsistenciaTO> asistencias){
+        this.asistencia=asistencias;
     }
 
     @Override
     public AsistenciaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context=parent.getContext();
-        View view= LayoutInflater.from(context).inflate(R.layout.lista, parent, false);
+        View view= LayoutInflater.from(context).inflate(R.layout.lista_asistencia, parent, false);
         AsistenciaViewHolder viewHolder=new AsistenciaViewHolder(view);
         return viewHolder;
     }
