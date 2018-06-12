@@ -88,7 +88,7 @@ public class HomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_gallery) {
             startActivity(new Intent().setClass(this,MapsActivity.class));
         } else if (id == R.id.nav_slideshow) {
-            startActivity(new Intent().setClass(this,AsistenciaFragment.class));
+            fragmentManager.beginTransaction().replace(R.id.contenedor, new AsistenciaFragment()).commit();
         } else if (id == R.id.nav_manage) {
 
         } else if (id == R.id.nav_share) {

@@ -48,7 +48,7 @@ public class AsistenciaFragment extends Fragment {
         layoutManager = new LinearLayoutManager(this.getContext());
 
         // Rest
-        retrofit=new Retrofit.Builder()
+      retrofit=new Retrofit.Builder()
                 .baseUrl("http://192.168.137.1:8080")
                 .addConverterFactory( GsonConverterFactory.create())
                 .build();
